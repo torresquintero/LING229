@@ -8,12 +8,10 @@ file = sys.argv[1]
 
 def read_corpus(file_name):
 	alignments = []
-	#iterations = 10
 	f = open(file_name)
 	for line in f.readlines():
 		pron = []
 		alignment = []
-		#if iterations > 0:
 		line = line.split(" ")
 		if line:
 			for word in line:
@@ -24,9 +22,6 @@ def read_corpus(file_name):
 				elif word[0].isupper(): 
 					pron.append(word)
 			alignments.append((list(line[0]), pron, " ".join(alignment)))
-		#else:
-		#	break
-		#iterations = iterations - 1
 	f.close()
 	return alignments
 
